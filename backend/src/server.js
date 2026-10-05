@@ -2,9 +2,11 @@ import "dotenv/config";
 import express from "express";
 import bcrypt from "bcryptjs";
 import prisma from "./lib/prisma.ts";
+import cors from "cors";
 
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 
 app.get("/", (req, res) => {
